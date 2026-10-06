@@ -13,6 +13,7 @@ dependencies = [
     "ipykernel>=6.29.5",
     # API & LLM Pipelines (Weeks 2 & 3)
     "requests>=2.32.3",
+    "ollama>=0.3.0",
     "pydantic>=2.13.4",
 ]
 
@@ -27,3 +28,7 @@ dev = [
     "memory-profiler>=0.61.0",
     "matplotlib>=3.9.1", 
 ]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
