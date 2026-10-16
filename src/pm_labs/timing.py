@@ -1,8 +1,20 @@
-"""Empirical timing helpers used by the Programming Methods labs."""
+"""Empirical timing helpers and benchmark workloads for the Programming Methods labs."""
 
 import statistics
 import timeit
 from collections.abc import Callable, Mapping, Sequence
+
+
+def count_duplicates_fast(items: list[str]) -> int:
+    """Count repeated occurrences in one pass, using Lab 6's set-based algorithm."""
+    seen = set()
+    duplicates = 0
+    for item in items:
+        if item in seen:
+            duplicates += 1
+        else:
+            seen.add(item)
+    return duplicates
 
 
 def time_growth[Data](
